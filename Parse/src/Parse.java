@@ -36,36 +36,36 @@ public class Parse {
 			}
 			if (localValules.get(2).toLowerCase().contains("a")) {
 				nameswithA.add(localValules.get(2));
-			}	
-			
-		}//checks records and stores all the names that contains an a.
-		
-		
-		
+			}
+
+		} // checks records and stores all the names that contains an a.
+
 		List<Integer> checkTime = new ArrayList<>();
 		for (int i = 0; i < records.size(); i++) {
 			List<String> checkline = records.get(i);
 			for (List<String> line : records) {
-				
+
 				if ((!line.equals(checkline)) && (line.get(0).equals(checkline.get(0)))) {
 
 					checkTime.add(i);
-					
 				}
 			}
-
-		}//checks if TimeStamps are equals, and then add them to checkTime list.
+		}
 
 		System.out.println("\n\n");
 		System.out.println("There is " + nameswithA.size() + " with the letter a in their name");
 		System.out.println("\n");
 
-		
 		System.out.println("There are " + checkTime.size() + " groups that have the same Timestamps:");
-		
+
 		for (Integer i : checkTime) {
-			System.out.println(records.get(i));
+			System.out.print("Group: ");
+			System.out.print(records.get(i).get(1));
+			System.out.print(" and ");
+			System.out.print(records.get(i).get(2));
+			System.out.println(".");
 		}
+	
 		System.out.println("\n");
 		System.out.println("There is " + workApp + " that are gonna work with Android apps.");
 
